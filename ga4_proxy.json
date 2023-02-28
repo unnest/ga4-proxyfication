@@ -1,0 +1,759 @@
+{
+    "exportFormatVersion": 2,
+    "exportTime": "2023-02-28 10:41:53",
+    "containerVersion": {
+        "path": "accounts/6074136799/containers/103286025/versions/0",
+        "accountId": "6074136799",
+        "containerId": "103286025",
+        "containerVersionId": "0",
+        "container": {
+            "path": "accounts/6074136799/containers/103286025",
+            "accountId": "6074136799",
+            "containerId": "103286025",
+            "name": "www.150euros.fr - Server",
+            "publicId": "GTM-TJSJ5QQ",
+            "usageContext": [
+                "SERVER"
+            ],
+            "fingerprint": "1677250845353",
+            "tagManagerUrl": "https://tagmanager.google.com/#/container/accounts/6074136799/containers/103286025/workspaces?apiLink=container",
+            "features": {
+                "supportUserPermissions": true,
+                "supportEnvironments": true,
+                "supportWorkspaces": true,
+                "supportGtagConfigs": false,
+                "supportBuiltInVariables": true,
+                "supportClients": true,
+                "supportFolders": true,
+                "supportTags": true,
+                "supportTemplates": true,
+                "supportTriggers": true,
+                "supportVariables": true,
+                "supportVersions": true,
+                "supportZones": true
+            },
+            "tagIds": [
+                "GTM-TJSJ5QQ"
+            ]
+        },
+        "tag": [
+            {
+                "accountId": "6074136799",
+                "containerId": "103286025",
+                "tagId": "19",
+                "name": "GA4",
+                "type": "sgtmgaaw",
+                "parameter": [
+                    {
+                        "type": "BOOLEAN",
+                        "key": "redactVisitorIp",
+                        "value": "false"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "epToIncludeDropdown",
+                        "value": "all"
+                    },
+                    {
+                        "type": "LIST",
+                        "key": "epToExclude",
+                        "list": [
+                            {
+                                "type": "MAP",
+                                "map": [
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "fieldName",
+                                        "value": "user_agent"
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "type": "LIST",
+                        "key": "eventParameters",
+                        "list": [
+                            {
+                                "type": "MAP",
+                                "map": [
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "fieldName",
+                                        "value": "client_id"
+                                    },
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "value",
+                                        "value": "{{GA4 - Client ID Pseudonymized}}"
+                                    }
+                                ]
+                            },
+                            {
+                                "type": "MAP",
+                                "map": [
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "fieldName",
+                                        "value": "x-ga-js_client_id"
+                                    },
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "value",
+                                        "value": "{{GA4 - JS Client ID Pseudonymized}}"
+                                    }
+                                ]
+                            },
+                            {
+                                "type": "MAP",
+                                "map": [
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "fieldName",
+                                        "value": "screen_resolution"
+                                    },
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "value"
+                                    }
+                                ]
+                            },
+                            {
+                                "type": "MAP",
+                                "map": [
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "fieldName",
+                                        "value": "page_referrer"
+                                    },
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "value",
+                                        "value": "{{GA4 - Page Referrer Pseudonymized}}"
+                                    }
+                                ]
+                            },
+                            {
+                                "type": "MAP",
+                                "map": [
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "fieldName",
+                                        "value": "page_location"
+                                    },
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "value",
+                                        "value": "{{GA4 - Page Location Pseudonymized}}"
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "upToIncludeDropdown",
+                        "value": "all"
+                    }
+                ],
+                "fingerprint": "1677577978872",
+                "firingTriggerId": [
+                    "8"
+                ],
+                "tagFiringOption": "ONCE_PER_EVENT",
+                "monitoringMetadata": {
+                    "type": "MAP"
+                },
+                "consentSettings": {
+                    "consentStatus": "NOT_SET"
+                }
+            }
+        ],
+        "trigger": [
+            {
+                "accountId": "6074136799",
+                "containerId": "103286025",
+                "triggerId": "8",
+                "name": "GA4 client",
+                "type": "ALWAYS",
+                "filter": [
+                    {
+                        "type": "EQUALS",
+                        "parameter": [
+                            {
+                                "type": "TEMPLATE",
+                                "key": "arg0",
+                                "value": "{{Client Name}}"
+                            },
+                            {
+                                "type": "TEMPLATE",
+                                "key": "arg1",
+                                "value": "GA4"
+                            }
+                        ]
+                    }
+                ],
+                "fingerprint": "1677577978869"
+            }
+        ],
+        "variable": [
+            {
+                "accountId": "6074136799",
+                "containerId": "103286025",
+                "variableId": "3",
+                "name": "Event Data - Page Referrer",
+                "type": "ed",
+                "parameter": [
+                    {
+                        "type": "BOOLEAN",
+                        "key": "setDefaultValue",
+                        "value": "false"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "keyPath",
+                        "value": "page_referrer"
+                    }
+                ],
+                "fingerprint": "1677577978867",
+                "formatValue": {}
+            },
+            {
+                "accountId": "6074136799",
+                "containerId": "103286025",
+                "variableId": "5",
+                "name": "Event Data - Client ID",
+                "type": "ed",
+                "parameter": [
+                    {
+                        "type": "BOOLEAN",
+                        "key": "setDefaultValue",
+                        "value": "false"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "keyPath",
+                        "value": "client_id"
+                    }
+                ],
+                "fingerprint": "1677577978868",
+                "formatValue": {}
+            },
+            {
+                "accountId": "6074136799",
+                "containerId": "103286025",
+                "variableId": "6",
+                "name": "GA4 - Client ID Pseudonymized",
+                "type": "cvt_103286025_4",
+                "parameter": [
+                    {
+                        "type": "TEMPLATE",
+                        "key": "input",
+                        "value": "{{Event Data - Client ID}}"
+                    }
+                ],
+                "fingerprint": "1677577978868",
+                "formatValue": {}
+            },
+            {
+                "accountId": "6074136799",
+                "containerId": "103286025",
+                "variableId": "9",
+                "name": "Event Data - Page Location",
+                "type": "ed",
+                "parameter": [
+                    {
+                        "type": "BOOLEAN",
+                        "key": "setDefaultValue",
+                        "value": "false"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "keyPath",
+                        "value": "page_location"
+                    }
+                ],
+                "fingerprint": "1677577978869",
+                "formatValue": {}
+            },
+            {
+                "accountId": "6074136799",
+                "containerId": "103286025",
+                "variableId": "11",
+                "name": "GA4 - Page Location Pseudonymized",
+                "type": "cvt_103286025_10",
+                "parameter": [
+                    {
+                        "type": "BOOLEAN",
+                        "key": "redactEmail",
+                        "value": "true"
+                    },
+                    {
+                        "type": "LIST",
+                        "key": "queryParamText",
+                        "list": [
+                            {
+                                "type": "TEMPLATE",
+                                "value": "gclid"
+                            },
+                            {
+                                "type": "TEMPLATE",
+                                "value": "fbclid"
+                            },
+                            {
+                                "type": "TEMPLATE",
+                                "value": "tel"
+                            },
+                            {
+                                "type": "TEMPLATE",
+                                "value": "telephone"
+                            },
+                            {
+                                "type": "TEMPLATE",
+                                "value": "phone"
+                            },
+                            {
+                                "type": "TEMPLATE",
+                                "value": "mobile"
+                            },
+                            {
+                                "type": "TEMPLATE",
+                                "value": "mob"
+                            },
+                            {
+                                "type": "TEMPLATE",
+                                "value": "firstname"
+                            },
+                            {
+                                "type": "TEMPLATE",
+                                "value": "lastname"
+                            },
+                            {
+                                "type": "TEMPLATE",
+                                "value": "surname"
+                            },
+                            {
+                                "type": "TEMPLATE",
+                                "value": "name"
+                            },
+                            {
+                                "type": "TEMPLATE",
+                                "value": "user"
+                            },
+                            {
+                                "type": "TEMPLATE",
+                                "value": "password"
+                            },
+                            {
+                                "type": "TEMPLATE",
+                                "value": "passwd"
+                            },
+                            {
+                                "type": "TEMPLATE",
+                                "value": "pass"
+                            },
+                            {
+                                "type": "TEMPLATE",
+                                "value": "zipcode"
+                            },
+                            {
+                                "type": "TEMPLATE",
+                                "value": "latitude"
+                            },
+                            {
+                                "type": "TEMPLATE",
+                                "value": "longitude"
+                            },
+                            {
+                                "type": "TEMPLATE",
+                                "value": "lat"
+                            },
+                            {
+                                "type": "TEMPLATE",
+                                "value": "long"
+                            },
+                            {
+                                "type": "TEMPLATE",
+                                "value": "lng"
+                            }
+                        ]
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "urlInput",
+                        "value": "{{Event Data - Page Location}}"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "inputMethod",
+                        "value": "textfield"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "removeRedactChoice",
+                        "value": "paramRemove"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "paramLowerCase",
+                        "value": "false"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "paramInputChoice",
+                        "value": "paramExclude"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "outputResult",
+                        "value": "url"
+                    }
+                ],
+                "fingerprint": "1677577978870",
+                "formatValue": {}
+            },
+            {
+                "accountId": "6074136799",
+                "containerId": "103286025",
+                "variableId": "12",
+                "name": "Event Data - JS Client ID",
+                "type": "ed",
+                "parameter": [
+                    {
+                        "type": "BOOLEAN",
+                        "key": "setDefaultValue",
+                        "value": "false"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "keyPath",
+                        "value": "x-ga-js_client_id"
+                    }
+                ],
+                "fingerprint": "1677577978870",
+                "formatValue": {}
+            },
+            {
+                "accountId": "6074136799",
+                "containerId": "103286025",
+                "variableId": "13",
+                "name": "GA4 - JS Client ID Pseudonymized",
+                "type": "cvt_103286025_4",
+                "parameter": [
+                    {
+                        "type": "TEMPLATE",
+                        "key": "input",
+                        "value": "{{Event Data - JS Client ID}}"
+                    }
+                ],
+                "fingerprint": "1677577978871",
+                "formatValue": {}
+            },
+            {
+                "accountId": "6074136799",
+                "containerId": "103286025",
+                "variableId": "15",
+                "name": "Utilities - Page Referrer Domain without www",
+                "type": "cvt_103286025_14",
+                "parameter": [
+                    {
+                        "type": "TEMPLATE",
+                        "key": "componentType",
+                        "value": "hostName"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "stripWww",
+                        "value": "true"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "urlSource",
+                        "value": "{{Event Data - Page Referrer}}"
+                    }
+                ],
+                "fingerprint": "1677577978871",
+                "formatValue": {}
+            },
+            {
+                "accountId": "6074136799",
+                "containerId": "103286025",
+                "variableId": "16",
+                "name": "Utilities - Internal Referrer Domains",
+                "type": "smm",
+                "parameter": [
+                    {
+                        "type": "BOOLEAN",
+                        "key": "setDefaultValue",
+                        "value": "true"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "input",
+                        "value": "{{Utilities - Page Referrer Domain without www}}"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "defaultValue",
+                        "value": "false"
+                    },
+                    {
+                        "type": "LIST",
+                        "key": "map",
+                        "list": [
+                            {
+                                "type": "MAP",
+                                "map": [
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "key",
+                                        "value": "unnest.co"
+                                    },
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "value",
+                                        "value": "true"
+                                    }
+                                ]
+                            },
+                            {
+                                "type": "MAP",
+                                "map": [
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "key",
+                                        "value": "insights.unnest.co"
+                                    },
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "value",
+                                        "value": "true"
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ],
+                "fingerprint": "1677580903802",
+                "formatValue": {}
+            },
+            {
+                "accountId": "6074136799",
+                "containerId": "103286025",
+                "variableId": "17",
+                "name": "GA4 - Page Referrer Domain with protocol",
+                "type": "cvt_103286025_7",
+                "parameter": [
+                    {
+                        "type": "TEMPLATE",
+                        "key": "urlSource",
+                        "value": "{{Event Data - Page Referrer}}"
+                    }
+                ],
+                "fingerprint": "1677577978872",
+                "formatValue": {}
+            },
+            {
+                "accountId": "6074136799",
+                "containerId": "103286025",
+                "variableId": "18",
+                "name": "GA4 - Page Referrer Pseudonymized",
+                "type": "smm",
+                "parameter": [
+                    {
+                        "type": "BOOLEAN",
+                        "key": "setDefaultValue",
+                        "value": "true"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "input",
+                        "value": "{{Utilities - Internal Referrer Domains}}"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "defaultValue",
+                        "value": "{{GA4 - Page Referrer Domain with protocol}}"
+                    },
+                    {
+                        "type": "LIST",
+                        "key": "map",
+                        "list": [
+                            {
+                                "type": "MAP",
+                                "map": [
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "key",
+                                        "value": "true"
+                                    },
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "value",
+                                        "value": "{{Event Data - Page Referrer}}"
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ],
+                "fingerprint": "1677577978872",
+                "formatValue": {}
+            }
+        ],
+        "builtInVariable": [
+            {
+                "accountId": "6074136799",
+                "containerId": "103286025",
+                "type": "EVENT_NAME",
+                "name": "Event Name"
+            },
+            {
+                "accountId": "6074136799",
+                "containerId": "103286025",
+                "type": "CLIENT_NAME",
+                "name": "Client Name"
+            }
+        ],
+        "fingerprint": "1677580913604",
+        "tagManagerUrl": "https://tagmanager.google.com/#/versions/accounts/6074136799/containers/103286025/versions/0?apiLink=version",
+        "customTemplate": [
+            {
+                "accountId": "6074136799",
+                "containerId": "103286025",
+                "templateId": "4",
+                "name": "Pseudonymize Variable",
+                "fingerprint": "1677577978868",
+                "templateData": "___INFO___\n\n{\n  \"type\": \"MACRO\",\n  \"id\": \"cvt_temp_public_id\",\n  \"version\": 1,\n  \"securityGroups\": [],\n  \"displayName\": \"Pseudonymize Variable\",\n  \"description\": \"\",\n  \"containerContexts\": [\n    \"SERVER\"\n  ]\n}\n\n\n___TEMPLATE_PARAMETERS___\n\n[\n  {\n    \"type\": \"TEXT\",\n    \"name\": \"input\",\n    \"displayName\": \"Value to pseudonymize\",\n    \"simpleValueType\": true,\n    \"valueValidators\": [\n      {\n        \"type\": \"NON_EMPTY\"\n      }\n    ]\n  }\n]\n\n\n___SANDBOXED_JS_FOR_SERVER___\n\nconst ts = require(\"getTimestampMillis\");\nconst sha256Sync = require('sha256Sync');\nconst math = require(\"Math\");\n\nvar t = ts();\nvar key = math.round(t / 10000000);\n\nreturn sha256Sync(data.input + '.' + key, {outputEncoding: 'hex'});\n\n\n___TESTS___\n\nscenarios: []\n\n\n___NOTES___\n\n\n\n\n"
+            },
+            {
+                "accountId": "6074136799",
+                "containerId": "103286025",
+                "templateId": "7",
+                "name": "URL Parser - Return protocol & domain",
+                "fingerprint": "1677577978868",
+                "templateData": "___INFO___\n\n{\n  \"type\": \"MACRO\",\n  \"id\": \"cvt_temp_public_id\",\n  \"__wm\": \"VGVtcGxhdGUtQXV0aG9yX1VSTFBhcnNlci1TaW1vLUFoYXZh\",\n  \"version\": 1,\n  \"securityGroups\": [],\n  \"displayName\": \"URL Parser - Return protocol \\u0026 domain\",\n  \"categories\": [\n    \"UTILITY\"\n  ],\n  \"description\": \"Parse any URL string for its constituent parts.\",\n  \"containerContexts\": [\n    \"SERVER\"\n  ]\n}\n\n\n___TEMPLATE_PARAMETERS___\n\n[\n  {\n    \"type\": \"SELECT\",\n    \"name\": \"urlSource\",\n    \"displayName\": \"URL Source\",\n    \"macrosInSelect\": true,\n    \"selectItems\": [\n      {\n        \"value\": \"default_page_location\",\n        \"displayValue\": \"page_location\"\n      }\n    ],\n    \"simpleValueType\": true,\n    \"help\": \"Choose \\u003cstrong\\u003epage_location\\u003c/strong\\u003e to use the respective key from the Event Data object, or provide a variable that returns a valid URL string.\",\n    \"defaultValue\": \"default_page_location\"\n  }\n]\n\n\n___SANDBOXED_JS_FOR_SERVER___\n\n// Enter your template code here.\nconst decodeUri = require('decodeUri');\nconst decodeUriComponent = require('decodeUriComponent');\nconst getEventData = require('getEventData');\nconst parseUrl = require('parseUrl');\n\nconst log = require('logToConsole');\n\nconst parsedUrl = parseUrl(data.urlSource === 'default_page_location' ? getEventData('page_location') : data.urlSource);\n\n// If not a valid URL, return undefined\nif (!parsedUrl) return;\nconst returnedUrl = parsedUrl.protocol + \"//\" + parsedUrl.hostname;\nreturn returnedUrl;\n\n\n___SERVER_PERMISSIONS___\n\n[\n  {\n    \"instance\": {\n      \"key\": {\n        \"publicId\": \"read_event_data\",\n        \"versionId\": \"1\"\n      },\n      \"param\": [\n        {\n          \"key\": \"keyPatterns\",\n          \"value\": {\n            \"type\": 2,\n            \"listItem\": [\n              {\n                \"type\": 1,\n                \"string\": \"page_location\"\n              }\n            ]\n          }\n        },\n        {\n          \"key\": \"eventDataAccess\",\n          \"value\": {\n            \"type\": 1,\n            \"string\": \"specific\"\n          }\n        }\n      ]\n    },\n    \"clientAnnotations\": {\n      \"isEditedByUser\": true\n    },\n    \"isRequired\": true\n  },\n  {\n    \"instance\": {\n      \"key\": {\n        \"publicId\": \"logging\",\n        \"versionId\": \"1\"\n      },\n      \"param\": [\n        {\n          \"key\": \"environments\",\n          \"value\": {\n            \"type\": 1,\n            \"string\": \"debug\"\n          }\n        }\n      ]\n    },\n    \"isRequired\": true\n  }\n]\n\n\n___TESTS___\n\nscenarios: []\nsetup: \"const mockData = {\\n  urlSource: 'default_page_location',\\n  componentType:\\\n  \\ 'filenameExtension'\\n};\\n\\nmock('getEventData', () => {\\n  return 'https://www.mock-url.com:8080/test.pdf?param1=value#hash';\\n\\\n  });\\n  \"\n\n\n___NOTES___\n\nCreated on 02/04/2021, 20:35:12\n\n\n",
+                "galleryReference": {
+                    "host": "github.com",
+                    "owner": "gtm-templates-simo-ahava",
+                    "repository": "url-parser",
+                    "version": "f7fcca3e54e4ef238b6075e01da08d4ff7d51d99",
+                    "isModified": true,
+                    "signature": "6dd65818dfe9898b4fa9065ed02edd3744321b5db168f51deb3ffffbf172d2be"
+                }
+            },
+            {
+                "accountId": "6074136799",
+                "containerId": "103286025",
+                "templateId": "10",
+                "name": "Exclude or Whitelist Query String Parameters",
+                "fingerprint": "1677579370177",
+                "templateData": "___TERMS_OF_SERVICE___\n\nBy creating or modifying this file you agree to Google Tag Manager's Community\nTemplate Gallery Developer Terms of Service available at\nhttps://developers.google.com/tag-manager/gallery-tos (or such other URL as\nGoogle may provide), as modified from time to time.\n\n\n___INFO___\n\n{\n  \"type\": \"MACRO\",\n  \"id\": \"cvt_temp_public_id\",\n  \"version\": 1,\n  \"securityGroups\": [],\n  \"displayName\": \"Exclude or Whitelist Query String Parameters\",\n  \"description\": \"Exclude or Whitelist Query String Parameters from page_location or any Variable with a valid URL-parameter. Parameters can be Removed or Redacted. Output can be with or without URL/Path.\",\n  \"categories\": [\n    \"UTILITY\",\n    \"TAG_MANAGEMENT\",\n    \"ANALYTICS\"\n  ],\n  \"containerContexts\": [\n    \"SERVER\"\n  ],\n  \"brand\": {\n    \"displayName\": \"gtm-templates-knowit-experience\",\n    \"id\": \"github.com_gtm-templates-knowit-experience\"\n  }\n}\n\n\n___TEMPLATE_PARAMETERS___\n\n[\n  {\n    \"type\": \"SELECT\",\n    \"name\": \"urlInput\",\n    \"displayName\": \"Page URL\",\n    \"macrosInSelect\": true,\n    \"selectItems\": [\n      {\n        \"value\": \"urlInputDefault\",\n        \"displayValue\": \"page_location\"\n      }\n    ],\n    \"simpleValueType\": true,\n    \"defaultValue\": \"urlInputDefault\",\n    \"help\": \"Enter a URL variable. \\u003cstrong\\u003epage_location\\u003c/strong\\u003e is predefined, but you can choose any variable with a valid URL.\",\n    \"alwaysInSummary\": true\n  },\n  {\n    \"type\": \"GROUP\",\n    \"name\": \"outputGroup\",\n    \"displayName\": \"Output Result\",\n    \"groupStyle\": \"NO_ZIPPY\",\n    \"subParams\": [\n      {\n        \"type\": \"SELECT\",\n        \"name\": \"outputResult\",\n        \"displayName\": \"Parameter Output Result\",\n        \"selectItems\": [\n          {\n            \"value\": \"url\",\n            \"displayValue\": \"Page URL with Parameters\"\n          },\n          {\n            \"value\": \"path\",\n            \"displayValue\": \"Page Path with Parameters\"\n          },\n          {\n            \"value\": \"paramq\",\n            \"displayValue\": \"Parameters with Question Mark\"\n          },\n          {\n            \"value\": \"param\",\n            \"displayValue\": \"Parameters without Question Mark\"\n          },\n          {\n            \"value\": \"urlwoq\",\n            \"displayValue\": \"Page URL without Parameters\"\n          }\n        ],\n        \"simpleValueType\": true,\n        \"defaultValue\": \"url\",\n        \"help\": \"Output Result can be:\\u003cbr/\\u003e\\n \\u003cb\\u003ePage URL with Parameters\\u003c/b\\u003e (https://domain.com/path?query\\u003dsomething).\\n\\u003cbr /\\u003e \\u003cb\\u003ePage Path with Query\\u003c/b\\u003e (/path?query\\u003dsomething).\\n \\u003cbr /\\u003e\\u003cb\\u003eParameters with Question Mark\\u003c/b\\u003e (?query\\u003dsomething). \\n\\u003cbr /\\u003e\\u003cb\\u003eParameters without Question Mark\\u003c/b\\u003e (query\\u003dsomething).\\n\\u003cbr /\\u003e \\u003cb\\u003ePage URL without Parameters\\u003c/b\\u003e (https://domain.com/path).\",\n        \"alwaysInSummary\": true\n      },\n      {\n        \"type\": \"CHECKBOX\",\n        \"name\": \"paramLowerCase\",\n        \"checkboxText\": \"Lowercase Parameters\",\n        \"simpleValueType\": true,\n        \"help\": \"Parameter matching is by default \\u003cb\\u003eCase Sensitive\\u003c/b\\u003e. By ticking this box, all incoming parameters will be \\u003cb\\u003elowercased\\u003c/b\\u003e.\",\n        \"alwaysInSummary\": true,\n        \"enablingConditions\": [\n          {\n            \"paramName\": \"outputResult\",\n            \"paramValue\": \"urlwoq\",\n            \"type\": \"NOT_EQUALS\"\n          }\n        ]\n      },\n      {\n        \"type\": \"CHECKBOX\",\n        \"name\": \"redactEmail\",\n        \"checkboxText\": \"Redact Email Adresses\",\n        \"simpleValueType\": true,\n        \"help\": \"Redacts possible email adresses independent of the Parameter matching. \\u003cbr/\\u003e\\u003cbr/\\u003e\\nAlso \\u003cstrong\\u003eWhitelisted parameteres\\u003c/strong\\u003e will be checked.\\u003cbr/\\u003e\\u003cbr/\\u003e If an email is found, the email adress will be replaced with \\u003cstrong\\u003e[EMAIL REDACTED]\\u003c/strong\\u003e.\",\n        \"alwaysInSummary\": true,\n        \"enablingConditions\": [\n          {\n            \"paramName\": \"outputResult\",\n            \"paramValue\": \"urlwoq\",\n            \"type\": \"NOT_EQUALS\"\n          }\n        ]\n      }\n    ]\n  },\n  {\n    \"type\": \"GROUP\",\n    \"name\": \"groupChoice\",\n    \"groupStyle\": \"NO_ZIPPY\",\n    \"subParams\": [\n      {\n        \"type\": \"RADIO\",\n        \"name\": \"paramInputChoice\",\n        \"displayName\": \"Whitelist or Exclude Query Parameters\",\n        \"radioItems\": [\n          {\n            \"value\": \"paramWhitelist\",\n            \"displayValue\": \"Whitelist Parameters\"\n          },\n          {\n            \"value\": \"paramExclude\",\n            \"displayValue\": \"Exclude Parameters\"\n          }\n        ],\n        \"simpleValueType\": true,\n        \"defaultValue\": \"paramWhitelist\",\n        \"help\": \"Choose if the Parameters you add should be \\u003cb\\u003eWhitelisted\\u003c/b\\u003e (included) or \\u003cb\\u003eExcluded\\u003c/b\\u003e.\"\n      },\n      {\n        \"type\": \"SELECT\",\n        \"name\": \"removeRedactChoice\",\n        \"displayName\": \"Remove or Redact Parameter Value\",\n        \"macrosInSelect\": false,\n        \"selectItems\": [\n          {\n            \"value\": \"paramRedact\",\n            \"displayValue\": \"Redact\"\n          },\n          {\n            \"value\": \"paramRemove\",\n            \"displayValue\": \"Remove\"\n          }\n        ],\n        \"simpleValueType\": true,\n        \"subParams\": [\n          {\n            \"type\": \"TEXT\",\n            \"name\": \"paramRedactText\",\n            \"displayName\": \"Redact Replacement Text\",\n            \"simpleValueType\": true,\n            \"enablingConditions\": [\n              {\n                \"paramName\": \"removeRedactChoice\",\n                \"paramValue\": \"paramRedact\",\n                \"type\": \"EQUALS\"\n              }\n            ],\n            \"defaultValue\": \"[REDACTED]\",\n            \"help\": \"Select which text to use to \\u003cstrong\\u003ereplace\\u003c/strong\\u003e the redacted parameter \\u003cstrong\\u003evalue\\u003c/strong\\u003e. As standard \\u003cstrong\\u003e[REDACTED]\\u003c/strong\\u003e is used.\"\n          }\n        ],\n        \"help\": \"Choose if Parameters should be \\u003cb\\u003eRemoved\\u003c/b\\u003e, or if the Parameter value should be \\u003cb\\u003eRedacted\\u003c/b\\u003e.\"\n      },\n      {\n        \"type\": \"LABEL\",\n        \"name\": \"excludeInfo\",\n        \"displayName\": \"Add \\u003cb\\u003eQuery Parameters\\u003c/b\\u003e for \\u003cb\\u003eExclusion\\u003c/b\\u003e\",\n        \"enablingConditions\": [\n          {\n            \"paramName\": \"paramInputChoice\",\n            \"paramValue\": \"paramExclude\",\n            \"type\": \"EQUALS\"\n          }\n        ]\n      },\n      {\n        \"type\": \"LABEL\",\n        \"name\": \"whitelistInfo\",\n        \"displayName\": \"Add \\u003cb\\u003eQuery Parameters\\u003c/b\\u003e for \\u003cb\\u003eWhitelisting\\u003c/b\\u003e\",\n        \"enablingConditions\": [\n          {\n            \"paramName\": \"paramInputChoice\",\n            \"paramValue\": \"paramWhitelist\",\n            \"type\": \"EQUALS\"\n          }\n        ]\n      },\n      {\n        \"type\": \"SELECT\",\n        \"name\": \"inputMethod\",\n        \"displayName\": \"Select Add Parameter Input\",\n        \"macrosInSelect\": false,\n        \"selectItems\": [\n          {\n            \"value\": \"table\",\n            \"displayValue\": \"Add Parameters to Table\"\n          },\n          {\n            \"value\": \"textfield\",\n            \"displayValue\": \"Add Parameters to Text Field\"\n          }\n        ],\n        \"simpleValueType\": true\n      },\n      {\n        \"type\": \"SIMPLE_TABLE\",\n        \"name\": \"queryParamTable\",\n        \"displayName\": \"Parameter Table\",\n        \"simpleTableColumns\": [\n          {\n            \"defaultValue\": \"\",\n            \"displayName\": \"\",\n            \"name\": \"queryParam\",\n            \"type\": \"TEXT\",\n            \"valueValidators\": [\n              {\n                \"type\": \"NON_EMPTY\"\n              }\n            ]\n          }\n        ],\n        \"newRowButtonText\": \"Add Parameter\",\n        \"valueValidators\": [\n          {\n            \"type\": \"NON_EMPTY\"\n          }\n        ],\n        \"enablingConditions\": [\n          {\n            \"paramName\": \"inputMethod\",\n            \"paramValue\": \"textfield\",\n            \"type\": \"NOT_EQUALS\"\n          }\n        ]\n      },\n      {\n        \"type\": \"TEXT\",\n        \"name\": \"queryParamText\",\n        \"displayName\": \"Parameter Text Field\",\n        \"simpleValueType\": true,\n        \"valueValidators\": [\n          {\n            \"type\": \"NON_EMPTY\"\n          }\n        ],\n        \"textAsList\": true,\n        \"help\": \"Add \\u003cstrong\\u003eone\\u003c/strong\\u003e parameter per line.\",\n        \"enablingConditions\": [\n          {\n            \"paramName\": \"inputMethod\",\n            \"paramValue\": \"textfield\",\n            \"type\": \"EQUALS\"\n          }\n        ],\n        \"alwaysInSummary\": true,\n        \"lineCount\": 10\n      }\n    ],\n    \"enablingConditions\": [\n      {\n        \"paramName\": \"outputResult\",\n        \"paramValue\": \"urlwoq\",\n        \"type\": \"NOT_EQUALS\"\n      }\n    ]\n  }\n]\n\n\n___SANDBOXED_JS_FOR_SERVER___\n\nconst decodeUri = require('decodeUri');\nconst getEventData = require('getEventData');\nconst parseUrl = require('parseUrl');\n\nlet urlInput = parseUrl(data.urlInput === 'urlInputDefault' ? getEventData('page_location') : data.urlInput);\nif(urlInput) {\n  const fullURL = decodeUri(urlInput.href);\n  if(data.outputResult === 'urlwoq') {\n    return fullURL.split(\"?\")[0];\n  } else {\n\tlet urlSplit = fullURL.split(\"?\");\n\tlet queryStringNew = [];\n\t\n\tif(fullURL.indexOf(\"?\") > -1) {\n\t\tlet queryURL = data.paramLowerCase ? urlSplit[1].toLowerCase() : urlSplit[1] ;\n        queryURL = queryURL.split(\"&\");\n        const redactText = data.paramRedactText;\n        const emailRegEx = '[aA-zZ0-9._]+@[aA-zZ0-9.-]+.[aA-zZ][&?]|[aA-zZ0-9._]+@[aA-zZ0-9.-]+.[aA-zZ]';\n\t\t\n\t\tconst paramQuery = data.queryParamText ? data.queryParamText.map(x => x) : data.queryParamTable.map(x => x.queryParam);\n\t\tfor(var query of queryURL){\n          if(data.redactEmail) {\n            const emailMatch = query.match(emailRegEx);\n              if(emailMatch) {\n                query = query.replace(emailMatch,'[EMAIL REDACTED]');\n              }\n          }\n\t\t\tif(data.paramInputChoice === \"paramWhitelist\"){\n\t\t\t\tif(paramQuery.indexOf(query.split(\"=\")[0]) > -1){\n\t\t\t\t\tqueryStringNew.push(query);\n\t\t\t\t} else if(data.removeRedactChoice === \"paramRedact\"){\n\t\t\t\t\tqueryStringNew.push(query.split(\"=\")[0] + \"=\" + redactText);\n\t\t\t\t}\n\t\t\t} else if(data.paramInputChoice === \"paramExclude\"){\n\t\t\t\tif(paramQuery.indexOf(query.split(\"=\")[0]) === -1){\n\t\t\t\t\tqueryStringNew.push(query);\n\t\t\t\t} else if(data.removeRedactChoice === \"paramRedact\"){\n\t\t\t\t\tqueryStringNew.push(query.split(\"=\")[0] + \"=\" + redactText);\n\t\t\t\t}\n\t\t\t} else {\n\t\t\t\tqueryStringNew(urlSplit[1]);\n\t\t\t}\n\t\t}\n\t}\n    const questionMark = queryStringNew != '' ? '?' : '';\n\tswitch (data.outputResult) {\n\t\tcase 'url':\n\t\t\treturn urlSplit[0]+questionMark+queryStringNew.join('&');\n\t\tcase 'path':\n\t\t\treturn urlInput.pathname+questionMark+queryStringNew.join('&');\n\t\tcase 'paramq':\n\t\t\treturn questionMark+queryStringNew.join('&');\n\t\tcase 'param':\n\t\t\treturn queryStringNew.join('&');\n\t}\n  }\n}\n\n\n___SERVER_PERMISSIONS___\n\n[\n  {\n    \"instance\": {\n      \"key\": {\n        \"publicId\": \"read_event_data\",\n        \"versionId\": \"1\"\n      },\n      \"param\": [\n        {\n          \"key\": \"keyPatterns\",\n          \"value\": {\n            \"type\": 2,\n            \"listItem\": [\n              {\n                \"type\": 1,\n                \"string\": \"page_location\"\n              }\n            ]\n          }\n        },\n        {\n          \"key\": \"eventDataAccess\",\n          \"value\": {\n            \"type\": 1,\n            \"string\": \"specific\"\n          }\n        }\n      ]\n    },\n    \"clientAnnotations\": {\n      \"isEditedByUser\": true\n    },\n    \"isRequired\": true\n  }\n]\n\n\n___TESTS___\n\nscenarios: []\n\n\n___NOTES___\n\nCreated on 8/14/2021, 6:18:55 PM\n\n\n",
+                "galleryReference": {
+                    "host": "github.com",
+                    "owner": "gtm-templates-knowit-experience",
+                    "repository": "sgtm-exclude-whitelist-query-strings",
+                    "version": "b4f716b995275a51b84b41b5fed849002fd32c79",
+                    "signature": "51beb7ff8434c992b09e41a0a01f2608f302811938500f048c9b430bfbeec5a6"
+                }
+            },
+            {
+                "accountId": "6074136799",
+                "containerId": "103286025",
+                "templateId": "14",
+                "name": "URL Parser",
+                "fingerprint": "1677577978871",
+                "templateData": "___TERMS_OF_SERVICE___\n\nBy creating or modifying this file you agree to Google Tag Manager's Community\nTemplate Gallery Developer Terms of Service available at\nhttps://developers.google.com/tag-manager/gallery-tos (or such other URL as\nGoogle may provide), as modified from time to time.\n\n\n___INFO___\n\n{\n  \"type\": \"MACRO\",\n  \"id\": \"cvt_temp_public_id\",\n  \"__wm\": \"VGVtcGxhdGUtQXV0aG9yX1VSTFBhcnNlci1TaW1vLUFoYXZh\",\n  \"version\": 1,\n  \"securityGroups\": [],\n  \"displayName\": \"URL Parser\",\n  \"categories\": [\n    \"UTILITY\"\n  ],\n  \"description\": \"Parse any URL string for its constituent parts.\",\n  \"containerContexts\": [\n    \"SERVER\"\n  ],\n  \"brand\": {\n    \"displayName\": \"gtm-templates-simo-ahava\",\n    \"id\": \"github.com_gtm-templates-simo-ahava\"\n  }\n}\n\n\n___TEMPLATE_PARAMETERS___\n\n[\n  {\n    \"type\": \"SELECT\",\n    \"name\": \"urlSource\",\n    \"displayName\": \"URL Source\",\n    \"macrosInSelect\": true,\n    \"selectItems\": [\n      {\n        \"value\": \"default_page_location\",\n        \"displayValue\": \"page_location\"\n      }\n    ],\n    \"simpleValueType\": true,\n    \"help\": \"Choose \\u003cstrong\\u003epage_location\\u003c/strong\\u003e to use the respective key from the Event Data object, or provide a variable that returns a valid URL string.\",\n    \"defaultValue\": \"default_page_location\"\n  },\n  {\n    \"type\": \"SELECT\",\n    \"name\": \"componentType\",\n    \"displayName\": \"Component Type\",\n    \"macrosInSelect\": false,\n    \"selectItems\": [\n      {\n        \"value\": \"filenameExtension\",\n        \"displayValue\": \"Filename Extension\"\n      },\n      {\n        \"value\": \"fragment\",\n        \"displayValue\": \"Fragment\"\n      },\n      {\n        \"value\": \"fullUrl\",\n        \"displayValue\": \"Full URL\"\n      },\n      {\n        \"value\": \"hostName\",\n        \"displayValue\": \"Host Name\"\n      },\n      {\n        \"value\": \"path\",\n        \"displayValue\": \"Path\"\n      },\n      {\n        \"value\": \"port\",\n        \"displayValue\": \"Port\"\n      },\n      {\n        \"value\": \"protocol\",\n        \"displayValue\": \"Protocol\"\n      },\n      {\n        \"value\": \"query\",\n        \"displayValue\": \"Query\"\n      }\n    ],\n    \"simpleValueType\": true,\n    \"defaultValue\": \"fullUrl\"\n  },\n  {\n    \"type\": \"CHECKBOX\",\n    \"name\": \"stripWww\",\n    \"checkboxText\": \"Strip \\u0027www.\\u0027\",\n    \"simpleValueType\": true,\n    \"help\": \"If enabled, the leading \\u0027www.\\u0027 will be stripped from the hostname.\",\n    \"enablingConditions\": [\n      {\n        \"paramName\": \"componentType\",\n        \"paramValue\": \"hostName\",\n        \"type\": \"EQUALS\"\n      }\n    ]\n  },\n  {\n    \"type\": \"TEXT\",\n    \"name\": \"queryKey\",\n    \"displayName\": \"Query Key (optional)\",\n    \"simpleValueType\": true,\n    \"help\": \"If provided, the value for the first query key matching the setting will be returned.\",\n    \"enablingConditions\": [\n      {\n        \"paramName\": \"componentType\",\n        \"paramValue\": \"query\",\n        \"type\": \"EQUALS\"\n      }\n    ]\n  }\n]\n\n\n___SANDBOXED_JS_FOR_SERVER___\n\n// Enter your template code here.\nconst decodeUri = require('decodeUri');\nconst decodeUriComponent = require('decodeUriComponent');\nconst getEventData = require('getEventData');\nconst parseUrl = require('parseUrl');\n\nconst log = require('logToConsole');\n\nconst parsedUrl = parseUrl(data.urlSource === 'default_page_location' ? getEventData('page_location') : data.urlSource);\n\n// If not a valid URL, return undefined\nif (!parsedUrl) return;\n\nswitch (data.componentType) {\n  case 'filenameExtension':\n    return parsedUrl.pathname.split('.').pop();\n  case 'fragment':\n    return parsedUrl.hash;\n  case 'fullUrl':\n    return parsedUrl.href;\n  case 'hostName':\n    return data.stripWww ? parsedUrl.hostname.replace('www.', '') : parsedUrl.hostname;\n  case 'path':\n    return parsedUrl.pathname;\n  case 'port':\n    return parsedUrl.port;\n  case 'protocol':\n    return parsedUrl.protocol;\n  case 'query':\n    if (data.queryKey) {\n      return parsedUrl.searchParams[data.queryKey] ? decodeUriComponent(parsedUrl.searchParams[data.queryKey]) : undefined;\n    } else {\n      return parsedUrl.search;\n    }\n}\n\n\n___SERVER_PERMISSIONS___\n\n[\n  {\n    \"instance\": {\n      \"key\": {\n        \"publicId\": \"read_event_data\",\n        \"versionId\": \"1\"\n      },\n      \"param\": [\n        {\n          \"key\": \"keyPatterns\",\n          \"value\": {\n            \"type\": 2,\n            \"listItem\": [\n              {\n                \"type\": 1,\n                \"string\": \"page_location\"\n              }\n            ]\n          }\n        },\n        {\n          \"key\": \"eventDataAccess\",\n          \"value\": {\n            \"type\": 1,\n            \"string\": \"specific\"\n          }\n        }\n      ]\n    },\n    \"clientAnnotations\": {\n      \"isEditedByUser\": true\n    },\n    \"isRequired\": true\n  },\n  {\n    \"instance\": {\n      \"key\": {\n        \"publicId\": \"logging\",\n        \"versionId\": \"1\"\n      },\n      \"param\": [\n        {\n          \"key\": \"environments\",\n          \"value\": {\n            \"type\": 1,\n            \"string\": \"debug\"\n          }\n        }\n      ]\n    },\n    \"isRequired\": true\n  }\n]\n\n\n___TESTS___\n\nscenarios: []\nsetup: \"const mockData = {\\n  urlSource: 'default_page_location',\\n  componentType:\\\n  \\ 'filenameExtension'\\n};\\n\\nmock('getEventData', () => {\\n  return 'https://www.mock-url.com:8080/test.pdf?param1=value#hash';\\n\\\n  });\\n  \"\n\n\n___NOTES___\n\nCreated on 02/04/2021, 20:35:12\n\n\n",
+                "galleryReference": {
+                    "host": "github.com",
+                    "owner": "gtm-templates-simo-ahava",
+                    "repository": "url-parser",
+                    "version": "f7fcca3e54e4ef238b6075e01da08d4ff7d51d99",
+                    "signature": "6dd65818dfe9898b4fa9065ed02edd3744321b5db168f51deb3ffffbf172d2be"
+                }
+            }
+        ],
+        "client": [
+            {
+                "accountId": "6074136799",
+                "containerId": "103286025",
+                "clientId": "1",
+                "name": "Universal Analytics",
+                "type": "ua_client",
+                "parameter": [
+                    {
+                        "type": "BOOLEAN",
+                        "key": "activateDefaultPaths",
+                        "value": "true"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "cookieManagement",
+                        "value": "server"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "cookieName",
+                        "value": "FPID"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "cookieDomain",
+                        "value": "auto"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "cookiePath",
+                        "value": "/"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "cookieMaxAgeInSec",
+                        "value": "63072000"
+                    }
+                ],
+                "fingerprint": "1677250845356"
+            },
+            {
+                "accountId": "6074136799",
+                "containerId": "103286025",
+                "clientId": "2",
+                "name": "GA4",
+                "type": "gaaw_client",
+                "parameter": [
+                    {
+                        "type": "BOOLEAN",
+                        "key": "activateDefaultPaths",
+                        "value": "true"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "cookieManagement",
+                        "value": "server"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "cookieName",
+                        "value": "FPID"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "cookieDomain",
+                        "value": "auto"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "cookiePath",
+                        "value": "/"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "cookieMaxAgeInSec",
+                        "value": "63072000"
+                    }
+                ],
+                "fingerprint": "1677250845356"
+            }
+        ]
+    }
+}
